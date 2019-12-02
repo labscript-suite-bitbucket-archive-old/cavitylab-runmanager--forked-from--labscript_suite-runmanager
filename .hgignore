@@ -1,3 +1,5 @@
 syntax: glob
 *.log
 *.pyc
+__init__backup.py
+.__runmanager.lock
