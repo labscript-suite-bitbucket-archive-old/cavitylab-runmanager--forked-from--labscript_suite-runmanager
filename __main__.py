@@ -2495,7 +2495,7 @@ class RunManager(object):
                 # whole thread if there is a bug.
                 exc_info = sys.exc_info()
                 zprocess.raise_exception_in_thread(exc_info)
-                continue
+                #continue
 
     def get_group_item_by_name(self, globals_file, group_name, column, previous_name=None):
         """Returns an item from the row representing a globals group in the

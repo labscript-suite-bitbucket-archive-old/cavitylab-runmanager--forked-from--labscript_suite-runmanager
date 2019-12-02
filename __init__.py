@@ -10,7 +10,7 @@
 # the project for the full license.                                 #
 #                                                                   #
 #####################################################################
-
+###modified to try and save functions as globals - 8/30/19 -AP
 from __future__ import division, unicode_literals, print_function, absolute_import
 from labscript_utils import PY2
 if PY2:
@@ -636,7 +636,7 @@ def make_single_run_file(filename, sequenceglobals, runglobals, sequence_id, run
                 # Store it as a null object reference:
                 value = h5py.Reference()
             try:
-                f['globals'].attrs[name] = value
+                f['globals'].attrs[name] = "<function me up buddy>" if callable(value) else value
             except Exception as e:
                 message = ('Global %s cannot be saved as an hdf5 attribute. ' % name +
                            'Globals can only have relatively simple datatypes, with no nested structures. ' +
